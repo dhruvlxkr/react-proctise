@@ -1,13 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
 function App() {
 
-  return 
-  <>
+  return <div>
     <button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
@@ -18,7 +11,7 @@ function App() {
 <button type="button" class="btn btn-dark">Dark</button>
 
 <button type="button" class="btn btn-link">Link</button>
-    </>
+  </div>
 }
 
 export default App
