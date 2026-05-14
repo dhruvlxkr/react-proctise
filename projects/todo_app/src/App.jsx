@@ -8,16 +8,15 @@ function App() {
     <>
       <center className="todo-container">
         <div className="container">
-            <TodoHeader />
+          <TodoHeader />
           <div className="d-flex">
-             <AddTodo />
+            <AddTodo />
           </div>
-        
-         <div>
-          <TodoItem1 />
-          <TodoItem2 />
-         </div>
-          
+
+          <div class="items">
+            <TodoItem1 />
+            <TodoItem2 />
+          </div>
         </div>
       </center>
     </>
