@@ -2,6 +2,8 @@ import TodoHeader from "./composer/TodoHeader";
 import AddTodo from "./composer/AddTodo";
 import TodoItem1 from "./composer/TodoItem1";
 import TodoItem2 from "./composer/TodoItem2";
+import TodoItem from "./composer/TodoItem";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
           </div>
 
           <div class="items">
+            <TodoItem />
             <TodoItem1 />
             <TodoItem2 />
           </div>
