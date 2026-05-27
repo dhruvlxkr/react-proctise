@@ -2,6 +2,8 @@ import {Routes,Route} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import Mapfunction from "./components/Mapfunction"
 import StudentProps from "./components/StudentProps"
+import ConditionalRendring from "./components/ConditionalRendring"
+import Boxcontainer from "./components/Boxcontainer"
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
         />
        <Route path="/mapfunction" element={<Mapfunction />}></Route>
        <Route path="/studentprops" element={<StudentProps name="Dharmendra" age="29" />}></Route>
+       <Route path="/conditionrendring" element={<ConditionalRendring></ConditionalRendring>}></Route>
+       <Route path="/boxcontainer" element={<Boxcontainer></Boxcontainer>}></Route>
    </Routes>
  </>
   
