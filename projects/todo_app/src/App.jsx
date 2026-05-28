@@ -1,11 +1,27 @@
-import TodoHeader from "./composer/TodoHeader";
-import AddTodo from "./composer/AddTodo";
-import TodoItem1 from "./composer/TodoItem1";
-import TodoItem2 from "./composer/TodoItem2";
-import TodoItem from "./composer/TodoItem";
+import TodoHeader from "./components/TodoHeader";
+import AddTodo from "./components/AddTodo";
+import TodoItems from "./components/TodoItems";
+
 
 
 function App() {
+  const todoItems = [{
+     "name": "Bilk milk",
+     "date" : "25/05/2026"
+  },
+  {
+     "name": "sale invoice",
+     "date" : "28/05/2026"
+  },
+  ,
+  {
+     "name": "Like This Video",
+     "date" : "28/05/2026"
+  },
+{
+     "name": "Suscribe Channel",
+     "date" : "Now"
+  }];
   return (
     <>
       <center className="todo-container">
@@ -14,12 +30,7 @@ function App() {
           <div className="d-flex">
             <AddTodo />
           </div>
-
-          <div class="items">
-            <TodoItem />
-            <TodoItem1 />
-            <TodoItem2 />
-          </div>
+        <TodoItems todoItems={todoItems}></TodoItems>
         </div>
       </center>
     </>

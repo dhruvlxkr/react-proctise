@@ -1,4 +1,4 @@
-function TodoItem(todoname,tododate) {
+function TodoItem({todoname,tododate}) {
   return (
     <div className="row">
       <div className="col-6 mt-3">{todoname}</div>
