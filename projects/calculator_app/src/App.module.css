@@ -2,26 +2,7 @@
  border: 1px solid black;
  border-radius: 5px;
  width: 210px;
- height: 350px;
+ /* height: 350px; */
  margin: 10% auto;
-}
-
-.display{
-    margin: 10px;
-    width: 180px;
-    font-size:25px;
-
-}
-
-.buttonContainer{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.button{
-    width: 45px;
-    height: 45px;
-    margin: 3px;
 }
 
