@@ -1,22 +1,23 @@
+import { useState } from "react";
 import ChildrenProps from "./component/ChildrenProps";
-import Vagitableitems from "./component/Vagitables";
+import Vagitables from "./component/Vagitables";
 import Heading from "./component/Heading";
+
 function App() {
-  const vagiTable = [
-    "Dal",
-    "Roti",
-    "Sabji",
-    "Bhindi",
-    "Palak",
-    "Gavarfali",
-    "Gobi",
-    "Taroi",
-  ];
+  const [vegeTable, setVegitable] = useState(["Dal", "Roti", "Sabji"]);
+  let [activeITems, SetActiveItems] = useState([]);
+  const addItem = (newItem) => {
+    setVegitable([...vegeTable, newItem]);
+  };
   return (
     <>
       <ChildrenProps>
         <Heading></Heading>
-        <Vagitableitems vagiTable={vagiTable}></Vagitableitems>
+        <Vagitables
+          vagiTable={vegeTable}
+          Bought={true}
+          addItem={addItem}
+        ></Vagitables>
       </ChildrenProps>
     </>
   );

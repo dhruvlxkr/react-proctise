@@ -1,20 +1,18 @@
 import VagitableForm from "./VagitableForm";
-const Vagitables = ({ vagiTable }) => {
-  function HandilingEventbutton(items) {
-    console.log(`${items} Being Bought`);
-  }
+const Vagitables = ({ vagiTable, Bought, addItem }) => {
+  function HandilingEventbutton(items) {}
   return (
     <>
       <ul className="list-group">
-        <VagitableForm></VagitableForm>
+        <VagitableForm addItem={addItem} />
         {vagiTable.map((items, index) => (
-          <li key={index} className="list-group-item">
+          <li key={index} className={`list-group-item ${Bought && "active"}`}>
             {items}
             <button
               onClick={() => HandilingEventbutton(items)}
               className="btn btn-primary btn-sm float-end"
             >
-              Click
+              Buy
             </button>
           </li>
         ))}

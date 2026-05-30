@@ -1,13 +1,14 @@
-function VagitableForm() {
-  let textshow = "Vegetable Items Entered By User";
+import { useState } from "react";
+function VagitableForm({ addItem }) {
   const HandlingFormEvent = (event) => {
-    console.log(event.target.value);
-    textshow = event.target.value;
+    if (event.key == "Enter") {
+      addItem(event.target.value);
+      event.target.value = "";
+    }
   };
   return (
     <>
       <input onKeyDown={HandlingFormEvent} type="text" className="Vagitablf" />
-      <p>{textshow}</p>
     </>
   );
 }
