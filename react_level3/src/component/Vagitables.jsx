@@ -1,3 +1,4 @@
+import VagitableForm from "./VagitableForm";
 const Vagitables = ({ vagiTable }) => {
   function HandilingEventbutton(items) {
     console.log(`${items} Being Bought`);
@@ -5,6 +6,7 @@ const Vagitables = ({ vagiTable }) => {
   return (
     <>
       <ul className="list-group">
+        <VagitableForm></VagitableForm>
         {vagiTable.map((items, index) => (
           <li key={index} className="list-group-item">
             {items}

@@ -1,7 +1,7 @@
 function Heading() {
   return (
     <>
-      <h1>Vagistables</h1>
+      <h1>Vegetable</h1>
     </>
   );
 }
