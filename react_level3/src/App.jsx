@@ -5,17 +5,28 @@ import Heading from "./component/Heading";
 
 function App() {
   const [vegeTable, setVegitable] = useState(["Dal", "Roti", "Sabji"]);
-  let [activeITems, SetActiveItems] = useState([]);
+  const [activeItems,setActiveItems] = useState([]);
   const addItem = (newItem) => {
     setVegitable([...vegeTable, newItem]);
   };
+
+  const onBuyButton = (items) => {
+      setActiveItems([...activeItems,items]);
+  }
+
+  const removeItem = (items) => {
+     setActiveItems(activeItems.filter(currentItem => currentItem != items))
+  }
+  
   return (
     <>
       <ChildrenProps>
         <Heading></Heading>
         <Vagitables
           vagiTable={vegeTable}
-          Bought={true}
+          activeItems={activeItems}
+          buyItems = {buyItems}
+          removeItem = {removeItem}
           addItem={addItem}
         ></Vagitables>
       </ChildrenProps>

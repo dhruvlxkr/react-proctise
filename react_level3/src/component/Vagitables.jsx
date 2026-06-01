@@ -1,6 +1,9 @@
 import VagitableForm from "./VagitableForm";
-const Vagitables = ({ vagiTable, Bought, addItem }) => {
-  function HandilingEventbutton(items) {}
+const Vagitables = ({ vagiTable, activeItems,buyItems,removeItem, addItem}) => {
+  function HandilingEventbutton(items) {
+    console.log("Button clicked",items);
+    
+  }
   return (
     <>
       <ul className="list-group">
