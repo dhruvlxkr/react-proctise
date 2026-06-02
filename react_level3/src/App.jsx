@@ -5,19 +5,19 @@ import Heading from "./component/Heading";
 
 function App() {
   const [vegeTable, setVegitable] = useState(["Dal", "Roti", "Sabji"]);
-  const [activeItems,setActiveItems] = useState([]);
+  const [activeItems, setActiveItems] = useState([]);
   const addItem = (newItem) => {
     setVegitable([...vegeTable, newItem]);
   };
 
   const onBuyButton = (items) => {
-      setActiveItems([...activeItems,items]);
-  }
+    setActiveItems([...activeItems, items]);
+  };
 
   const removeItem = (items) => {
-     setActiveItems(activeItems.filter(currentItem => currentItem != items))
-  }
-  
+    setActiveItems(activeItems.filter((currentItem) => currentItem != items));
+  };
+
   return (
     <>
       <ChildrenProps>
@@ -25,8 +25,8 @@ function App() {
         <Vagitables
           vagiTable={vegeTable}
           activeItems={activeItems}
-          buyItems = {buyItems}
-          removeItem = {removeItem}
+          buyItems={onBuyButton}
+          removeItem={removeItem}
           addItem={addItem}
         ></Vagitables>
       </ChildrenProps>
