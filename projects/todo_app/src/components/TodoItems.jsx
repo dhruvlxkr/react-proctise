@@ -3,7 +3,7 @@ const TodoItems = ({ todoItems}) =>{
  return <>
  
      <div className="items">
-      {todoItems.map((item) => <TodoItem todoname={item.name} tododate={item.date} />)}
+      {todoItems.map((item,index) => <TodoItem key={index} todoname={item.name} tododate={item.date} />)}
           </div>
  </>
 }
