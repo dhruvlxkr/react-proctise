@@ -2,33 +2,15 @@ import TodoHeader from "./components/TodoHeader";
 import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import { useState } from "react";
+import WelcomeMessege from "./components/WelcomeMessage";
 
 function App() {
-  const initialTodoItems = [
-    {
-      name: "Bilk milk",
-      date: "25/05/2026",
-    },
-    {
-      name: "sale invoice",
-      date: "28/05/2026",
-    },
-    ,
-    {
-      name: "Like This Video",
-      date: "28/05/2026",
-    },
-    {
-      name: "Suscribe Channel",
-      date: "Now",
-    },
-  ];
+  const [todoItems, SettodoItems] = useState([]);
 
-  const [todoItems, SettodoItems] = useState(initialTodoItems);
-
-  const handleNewtodo = (todoname,todoDate) => {
-      console.log(`Todo Items : ${todoname} Todo Date ${todoDate}`);  
-  }
+  const handleNewtodo = (todoname, todoDate) => {
+    const newTodoItems = [...todoItems, { name: todoname, date: todoDate }];
+    SettodoItems(newTodoItems);
+  };
 
   return (
     <>
@@ -38,6 +20,7 @@ function App() {
           <div className="d-flex">
             <AddTodo newTodoItems={handleNewtodo} />
           </div>
+          {todoItems.length === 0 && <WelcomeMessege></WelcomeMessege>}
           <TodoItems todoItems={todoItems}></TodoItems>
         </div>
       </center>

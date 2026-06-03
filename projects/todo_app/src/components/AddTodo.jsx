@@ -1,18 +1,22 @@
 import { useState } from "react";
 
-function AddTodo({newTodoItems}) {
-
-
-  const [todoName,SettodoName] = useState();
-  const [todoDate,SettodoDate] = useState();
+function AddTodo({ newTodoItems }) {
+  const [todoName, SettodoName] = useState();
+  const [todoDate, SettodoDate] = useState();
 
   const handleTodoname = (event) => {
-    console.log(todoName);
-  }
-  
+    SettodoName(event.target.value);
+  };
+
   const handleDate = (event) => {
-       console.log(todoDate);
-       }
+    SettodoDate(event.target.value);
+  };
+
+  const handleButtonEvent = () => {
+    newTodoItems(todoName, todoDate);
+    SettodoName("");
+    SettodoDate("");
+  };
   return (
     <>
       <div className="col-6 m-2">
@@ -21,15 +25,25 @@ function AddTodo({newTodoItems}) {
           className="form-control"
           placeholder="Enter Todo Here"
           onChange={handleTodoname}
+          value={todoName || ""}
         />
       </div>
 
       <div className="col-4 m-2 ">
-        <input type="date" className="form-control " onChange={handleDate} />
+        <input
+          type="date"
+          className="form-control "
+          value={todoDate || ""}
+          onChange={handleDate}
+        />
       </div>
 
       <div className="col-2 mt-2 text-center">
-        <button onClick={()=> newTodoItems('a','b')} type="button" className="btn btn-success">
+        <button
+          onClick={handleButtonEvent}
+          type="button"
+          className="btn btn-success"
+        >
           Add
         </button>
       </div>
