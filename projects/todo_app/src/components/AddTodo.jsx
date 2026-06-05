@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 function AddTodo({ newTodoItems }) {
   const [todoName, SettodoName] = useState();
@@ -44,7 +45,7 @@ function AddTodo({ newTodoItems }) {
           type="button"
           className="btn btn-success"
         >
-          Add
+          <FaPlus></FaPlus>
         </button>
       </div>
     </>

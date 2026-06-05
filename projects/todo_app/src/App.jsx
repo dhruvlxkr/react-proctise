@@ -12,6 +12,11 @@ function App() {
     SettodoItems(newTodoItems);
   };
 
+  const onDeleteButton = (todoitems) => {
+    const newTodoItems = todoItems.filter((item) => item.name != todoitems);
+    SettodoItems(newTodoItems);
+  };
+
   return (
     <>
       <center className="todo-container">
@@ -21,7 +26,10 @@ function App() {
             <AddTodo newTodoItems={handleNewtodo} />
           </div>
           {todoItems.length === 0 && <WelcomeMessege></WelcomeMessege>}
-          <TodoItems todoItems={todoItems}></TodoItems>
+          <TodoItems
+            todoItems={todoItems}
+            onClickDelete={onDeleteButton}
+          ></TodoItems>
         </div>
       </center>
     </>
