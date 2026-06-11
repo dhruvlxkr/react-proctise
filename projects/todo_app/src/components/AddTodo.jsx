@@ -1,53 +1,61 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaPlus } from "react-icons/fa";
 
 function AddTodo({ newTodoItems }) {
-  const [todoName, SettodoName] = useState();
-  const [todoDate, SettodoDate] = useState();
+  // const [todoName, SettodoName] = useState();
+  // const [todoDate, SettodoDate] = useState();
 
-  const handleTodoname = (event) => {
-    SettodoName(event.target.value);
-  };
+  const todoNameUpdate = useRef();
+  const todoDateUpdate = useRef();
 
-  const handleDate = (event) => {
-    SettodoDate(event.target.value);
-  };
+  // const handleTodoname = (event) => {
+  //   SettodoName(event.target.value);
+  // };
 
-  const handleButtonEvent = () => {
+  // const handleDate = (event) => {
+  //   SettodoDate(event.target.value);
+  // };
+
+  const handleButtonEvent = (event) => {
+    event.preventDefault();
+    const todoName = todoNameUpdate.current.value;
+    const todoDate = todoDateUpdate.current.value;
     newTodoItems(todoName, todoDate);
-    SettodoName("");
-    SettodoDate("");
+    // SettodoName("");
+    // SettodoDate("");
   };
   return (
     <>
-      <div className="col-6 m-2">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Enter Todo Here"
-          onChange={handleTodoname}
-          value={todoName || ""}
-        />
-      </div>
+      <form action="" onSubmit={handleButtonEvent}>
+        <div className="col-12 d-flex">
+          <div className="col-6 m-2">
+            <input
+              type="text"
+              ref={todoNameUpdate}
+              className="form-control"
+              placeholder="Enter Todo Here"
+              // onChange={handleTodoname}
+              // value={todoName || ""}
+            />
+          </div>
 
-      <div className="col-4 m-2 ">
-        <input
-          type="date"
-          className="form-control "
-          value={todoDate || ""}
-          onChange={handleDate}
-        />
-      </div>
+          <div className="col-4 m-2 ">
+            <input
+              type="date"
+              ref={todoDateUpdate}
+              className="form-control "
+              // value={todoDate || ""}
+              // onChange={handleDate}
+            />
+          </div>
 
-      <div className="col-2 mt-2 text-center">
-        <button
-          onClick={handleButtonEvent}
-          type="button"
-          className="btn btn-success"
-        >
-          <FaPlus></FaPlus>
-        </button>
-      </div>
+          <div className="col-2 mt-2 text-center">
+            <button type="submit" className="btn btn-success">
+              <FaPlus></FaPlus>
+            </button>
+          </div>
+        </div>
+      </form>
     </>
   );
 }
