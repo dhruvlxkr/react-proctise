@@ -21,6 +21,8 @@ function AddTodo({ newTodoItems }) {
     const todoName = todoNameUpdate.current.value;
     const todoDate = todoDateUpdate.current.value;
     newTodoItems(todoName, todoDate);
+    todoNameUpdate.current.value = "";
+    todoDateUpdate.current.value = "";
     // SettodoName("");
     // SettodoDate("");
   };

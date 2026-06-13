@@ -3,6 +3,7 @@ import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import { useState } from "react";
 import WelcomeMessege from "./components/WelcomeMessage";
+import Todoitemstore from "./store/Todoitemstore";
 
 function App() {
   const [todoItems, SettodoItems] = useState([]);
@@ -19,19 +20,21 @@ function App() {
 
   return (
     <>
-      <center className="todo-container">
-        <div className="container">
-          <TodoHeader />
-          <div className="d-flex">
-            <AddTodo newTodoItems={handleNewtodo} />
+      <Todoitemstore>
+        <center className="todo-container">
+          <div className="container">
+            <TodoHeader />
+            <div className="d-flex">
+              <AddTodo newTodoItems={handleNewtodo} />
+            </div>
+            {todoItems.length === 0 && <WelcomeMessege></WelcomeMessege>}
+            <TodoItems
+              todoItems={todoItems}
+              onClickDelete={onDeleteButton}
+            ></TodoItems>
           </div>
-          {todoItems.length === 0 && <WelcomeMessege></WelcomeMessege>}
-          <TodoItems
-            todoItems={todoItems}
-            onClickDelete={onDeleteButton}
-          ></TodoItems>
-        </div>
-      </center>
+        </center>
+      </Todoitemstore>
     </>
   );
 }
